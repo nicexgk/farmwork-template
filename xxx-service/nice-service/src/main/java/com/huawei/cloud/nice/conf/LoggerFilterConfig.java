@@ -18,7 +18,7 @@ public class LoggerFilterConfig {
     public FilterRegistrationBean<Filter> loggerFilterBean() {
         FilterRegistrationBean<Filter> filterRegistration = new FilterRegistrationBean<>();
         filterRegistration.setFilter(new RequestResponseLoggerFilter());
-        filterRegistration.addUrlPatterns("/rest/nice/*");
+        filterRegistration.addUrlPatterns("/*");
         return filterRegistration;
     }
 
