@@ -1,0 +1,62 @@
+#appliation setting
+spring:
+  profiles: com
+  redis:
+    port: 6380
+    database: 6
+mybatis:
+  mapper-locations: classpath:mybatis/*/*Mapper.xml
+server:
+  port: 9110
+management:
+  server:
+    port: 9210
+
+---
+spring:
+  profiles: local
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  datasource:
+    name: local
+    url: jdbc:mysql://127.0.0.1:3306/nice?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: nice
+    password: nice
+---
+spring:
+  profiles: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  datasource:
+    name: local
+    url: jdbc:mysql://127.0.0.1:3306/nice?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: nice
+    password: nice
+---
+spring:
+  profiles: test
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  datasource:
+    name: local
+    url: jdbc:mysql://127.0.0.1:3306/nice?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: nice
+    password: nice
+---
+spring:
+  profiles: prod
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  datasource:
+    name: local
+    url: jdbc:mysql://127.0.0.1:3306/nice?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: nice
+    password: nice

@@ -1,0 +1,4 @@
+common:
+  filter:
+    log:
+      regex: (?!.*((upload)|(fileUpload)|(Excel)|(/file/upload))).*$

@@ -1,0 +1,83 @@
+#spring setting
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  messages:
+    basename: i18n/messages,i18n/commoncomp,i18n
+  http:
+    encoding:
+      charset: utf-8
+      enabled: true
+      force: true
+  aop:
+    proxy-target-class: true
+    auto: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: false
+#mybatis setting
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mybatis/*/*Mapper.xml
+#security setting
+management:
+  server:
+    ssl:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+#feign setting
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+  hystrix:
+    enabled: true
+  httpclient:
+    enabled: true
+  service-id:
+    nice-service: nice-service
+#hystrix setting
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 40000
+      metrics:
+        healthSnapshot:
+          intervalInMilliseconds: 5000
+  threadpool:
+    default:
+      coreSize: 10
+      maximumSize: 30
+      maxQueueSize: 100
+      queueSizeRejectionThreshold: 100
+#ribbon setting
+ribbon:
+  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+  MaxAutoRetriesNextServer: 0
+  ReadTimeout: 30000
+  ConnectTimeout: 10000
+  MaxAutoRetries: 0
+#apache heep client setting
+apache:
+  httpclient:
+    socketTimeout: 60000
+    connTimeout: 60000
+    timeTolive: 60
+    maxTotal: 100
+    defaultMaxPerRoute: 50
+    idleTimeout: 20
+

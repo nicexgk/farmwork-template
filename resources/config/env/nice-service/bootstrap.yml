@@ -1,0 +1,14 @@
+#application information
+spring:
+  profiles:
+    active: sys,syslocal,common,commonlocal,com,local
+  application:
+    name: nice-service
+#servlet path setting
+application:
+  servlet-path: /rest/nice/*
+
+
+logging:
+  level:
+    com.leelen.cloud.pms.dao: DEBUG
