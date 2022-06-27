@@ -45,7 +45,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.huawei.cloud.nice.NiceServiceApplication</mainClass>
+                    <mainClass>com.nice.cloud.nice.NiceServiceApplication</mainClass>
                     <fork>true</fork>
                 </configuration>
             </plugin>

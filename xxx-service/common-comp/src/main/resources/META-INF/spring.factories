@@ -1,3 +1,3 @@
 # Application Context Initializers
 org.springframework.context.ApplicationContextInitializer=\
-com.huawei.cloud.init.CustomApplicationContextInitializer
+CustomApplicationContextInitializer
